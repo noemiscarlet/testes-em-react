@@ -2,6 +2,8 @@ import { screen } from '@testing-library/react';
 import renderWithRouter from '../renderWithRouter';
 import App from '../App';
 
+const src = 'https://cdn2.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png';
+
 describe('testes do requisito 2', () => {
   test('se a página contém um heading h2 com o texto About Pokédex.', () => {
     renderWithRouter(<App />, { route: '/about' });
@@ -36,6 +38,10 @@ describe('testes do requisito 2', () => {
       name: /pokédex/i,
     });
 
+    console.log(imagePokedex);
+
     expect(imagePokedex).toBeInTheDocument();
+    expect(imagePokedex).toHaveAttribute('src', 'https://cdn2.b'
+    + 'ulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png');
   });
 });

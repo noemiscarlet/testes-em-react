@@ -36,8 +36,6 @@ describe('testes do requisito 2', () => {
       name: /pokédex/i,
     });
 
-    console.log(imagePokedex);
-
     expect(imagePokedex).toBeInTheDocument();
     expect(imagePokedex).toHaveAttribute('src', 'https://cdn2.b'
     + 'ulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png');

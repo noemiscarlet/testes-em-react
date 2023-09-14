@@ -15,7 +15,7 @@ describe('testes do requisito 6', () => {
     expect(name).toBeInTheDocument();
     expect(type).toHaveTextContent('Electric');
     expect(img).toBeInTheDocument();
-    expect(img.getAttribute('src')).toBe('https://archives.bulbagarden.net/media/upload/b/b2/Spr_5b_025_m.png');
+    expect(img).toHaveAttribute('src', 'https://archives.bulbagarden.net/media/upload/b/b2/Spr_5b_025_m.png');
   });
 
   test('se o card do Pokémon indicado na Pokédex contém '

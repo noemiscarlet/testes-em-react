@@ -28,13 +28,16 @@ describe('testes do requisito 2', () => {
     const typePokemons = screen.getAllByTestId('pokemon-type-button');
     const nextPokemon = screen.getByRole('button', { name: /próximo pokémon/i });
     const all = screen.getByRole('button', { name: /all/i });
+    const types = pokemonList.map(({ type }) => type);
 
     typePokemons.forEach((button) => {
+      const actualType = types.filter((type) => type === button.textContent);
+      const textButton = button.textContent;
       expect(button).toBeInTheDocument();
+      expect(button).toHaveTextContent(actualType[0]);
 
       fireEvent.click(button);
 
-      const textButton = button.textContent;
       const pokemonListFiltered = pokemonList.filter(({ name }) => name === textButton);
 
       pokemonListFiltered.forEach((pokemon) => {
@@ -50,6 +53,4 @@ describe('testes do requisito 2', () => {
       fireEvent.click(nextPokemon);
     });
   });
-  test('', () => {});
-  test('', () => {});
 });

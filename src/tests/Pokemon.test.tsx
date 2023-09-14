@@ -7,3 +7,4 @@ describe('testes do requisito 6', () => {
   test('', () => {});
 });
  */
+test('', () => {});

@@ -54,7 +54,7 @@ describe('testes do requisito 5', () => {
     });
   });
 
-  test('se é mostrado apenas um Pokémon por vez', () => {
+  test('se é mostrado apenas um Pokémon por vez.', () => {
     renderWithRouter(<App />);
     const pokemonElement = screen.getAllByTestId('pokemon-name');
     expect(pokemonElement.length).toBe(1);

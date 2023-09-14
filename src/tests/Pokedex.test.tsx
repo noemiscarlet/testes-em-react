@@ -42,8 +42,13 @@ describe('testes do requisito 2', () => {
         fireEvent.click(nextPokemon);
       });
     });
-
+    fireEvent.click(all);
     expect(all).toBeInTheDocument();
+
+    pokemonList.forEach((pokemon) => {
+      expect(screen.getByText(pokemon.name)).toBeInTheDocument();
+      fireEvent.click(nextPokemon);
+    });
   });
   test('', () => {});
   test('', () => {});

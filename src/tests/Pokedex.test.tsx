@@ -3,7 +3,7 @@ import renderWithRouter from '../renderWithRouter';
 import App from '../App';
 import pokemonList from '../data';
 
-describe('testes do requisito 2', () => {
+describe('testes do requisito 5', () => {
   test('se a página contém um heading h2 com o texto Encountered Pokémon', () => {
     renderWithRouter(<App />);
     const h2 = screen.getByRole('heading', { name: /encountered pokémon/i });
@@ -52,5 +52,11 @@ describe('testes do requisito 2', () => {
       expect(screen.getByText(pokemon.name)).toBeInTheDocument();
       fireEvent.click(nextPokemon);
     });
+  });
+
+  test('se é mostrado apenas um Pokémon por vez', () => {
+    renderWithRouter(<App />);
+    const pokemonElement = screen.getAllByTestId('pokemon-name');
+    expect(pokemonElement.length).toBe(1);
   });
 });
